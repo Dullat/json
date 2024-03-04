@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Our superheroes</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+
+    </header>
+
+    <section>
+
+    </section>
+
+    <script>
+        function print(user) {
+            const h1 = document.createElement('h1');
+            const p = document.createElement('p');
+            h1.innerHTML = user.name;
+            p.innerHTML = user.hobby;
+
+            let header = document.querySelector('header');
+            header.appendChild(h1);
+            header.appendChild(p);
+        }
+
+        
+
+        async function populate() {
+            const response = await fetch('./user.json'); // Fetch JSON data
+            const user = await response.json(); // Parse JSON
+            console.log(user); // Output user data
+
+            print(user);
+        }
+
+        populate();
+    </script>
+</body>
+
+</html>
